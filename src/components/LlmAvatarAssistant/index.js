@@ -7,7 +7,6 @@
  *   import { createLlmClient } from './LlmAvatarAssistant/llmClient.js';
  */
 export { default, DEFAULT_CONFIG } from './LlmAvatarAssistant.jsx';
-export { default as AvatarCanvas, webglAvailable } from './AvatarCanvas.jsx';
 export { createLlmClient, normalizeLlmConfig } from './llmClient.js';
 export {
   collectSections,
@@ -16,5 +15,4 @@ export {
   slugify,
   slugToTitle,
 } from './sectionScanner.js';
-export { computeFit, centeredPosition } from './autoFit.js';
 export { normalize, stripCodeFence, plainMarkdown } from './utils.js';

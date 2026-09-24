@@ -22,7 +22,6 @@ const DEFAULT_CONFIG = {
   model: 'default',
   temperature: 0.7,
   defaultText: 'Hi! I live on this page. Ask me anything about it.',
-  modelUrl: 'models/robot.glb',
   side: 'right',                  // right | left
   corner: null,                   // null | 'bottom-left' | 'bottom-right'
   maxBubbleHeight: 240,
