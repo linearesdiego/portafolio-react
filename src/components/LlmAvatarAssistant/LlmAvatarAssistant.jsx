@@ -114,7 +114,7 @@ export default function LlmAvatarAssistant({
     if (!q || busy) return;
     const client = clientRef.current;
     if (!client) {
-      setError(client ? error : 'The assistant is not configured. Set a valid base URL.');
+      setError(client ? error : 'El asistente no está configurado. Definí una URL base válida.');
       return;
     }
 
@@ -153,7 +153,7 @@ export default function LlmAvatarAssistant({
         full = await client.chat(payload);
         updateAssistantMessage(assistantId, { text: full });
       }
-      if (!full) updateAssistantMessage(assistantId, { text: '(empty response)' });
+      if (!full) updateAssistantMessage(assistantId, { text: '(respuesta vacía)' });
 
       // Scan the final answer for a section reference and scroll there.
       const ref = findSectionReference(full, sectionsRef.current);
@@ -163,7 +163,7 @@ export default function LlmAvatarAssistant({
       }
       if (onSend) onSend(q, full);
     } catch (err) {
-      setError(err?.message || 'The model request failed.');
+      setError(err?.message || 'No se pudo obtener respuesta del modelo.');
     } finally {
       setBusy(false);
     }
@@ -179,7 +179,7 @@ export default function LlmAvatarAssistant({
       className="lav-root fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
       data-testid="lav-root"
       role="region"
-      aria-label="AI assistant"
+      aria-label="Asistente IA"
     >
       {isOpen && (
         <div className="w-80 max-w-[90vw] flex flex-col gap-3 rounded-2xl border border-white/10 bg-(--card-2) p-4 shadow-2xl">
@@ -227,15 +227,16 @@ export default function LlmAvatarAssistant({
 
           {/* Question input */}
           <form className="lav-input-row flex items-center gap-2" onSubmit={submit}>
+            <label htmlFor="lav-input" className="sr-only">Tu pregunta para el asistente</label>
             <input
               ref={inputRef}
-              className="lav-input flex-1 rounded-full bg-(--bg-primary) px-3 py-2 text-sm text-(--ink) outline-none"
+              id="lav-input"
+              className="lav-input flex-1 rounded-full bg-(--bg-primary) px-3 py-2 text-sm text-(--ink) outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               data-testid="lav-input"
               value={input}
-              placeholder="Preguntá algo…"
+              placeholder="Ej.: ¿Qué proyectos hiciste?"
               onChange={(e) => setInput(e.target.value)}
               disabled={busy}
-              aria-label="Ask the assistant"
             />
             <button
               className="lav-send flex items-center justify-center rounded-full bg-(--card-accent) px-4 py-2 text-sm text-white disabled:opacity-50"
@@ -243,7 +244,7 @@ export default function LlmAvatarAssistant({
               type="submit"
               disabled={busy || !input.trim()}
             >
-              {busy ? '…' : 'Ask'}
+              {busy ? '…' : 'Enviar'}
             </button>
           </form>
 
@@ -285,14 +286,15 @@ function renderResponse(text, typing, matchedSection, performScroll) {
   return (
     <span data-testid="lav-response-text">
       {body.slice(0, at)}
-      <span
-        className="lav-bubble-section-link"
+      <button
+        type="button"
+        className="lav-bubble-section-link cursor-pointer rounded font-medium underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-white"
         data-testid="lav-section-link"
         onClick={() => performScroll(matchedSection)}
-        title={`Go to ${title}`}
+        title={`Ir a ${title}`}
       >
         {body.slice(at, at + (title || '').length)}
-      </span>
+      </button>
       {body.slice(at + (title || '').length)}
     </span>
   );
