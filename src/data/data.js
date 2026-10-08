@@ -64,3 +64,54 @@ export const TECNOLOGIAS = [
   { nombre: "Astro", icon: astro },
   { nombre: "Postman", icon: postman },
 ];
+
+export const EXPERIENCIA = [
+  {
+    id: "nodos-hub",
+    empresa: "Nodos Hub",
+    modalidad: "Jornada completa · Híbrido",
+    ubicacion: "San Juan, Argentina",
+    puestos: [
+      {
+        titulo: "Desarrollador Ssr FrontEnd",
+        desde: { texto: "ago. 2022", fecha: "2022-08" },
+        hasta: { texto: "actualidad" },
+        tags: ["JavaScript", "HTTPS", "React JS"],
+      },
+      {
+        titulo: "Desarrollador FrontEnd",
+        desde: { texto: "oct. 2022", fecha: "2022-10" },
+        hasta: { texto: "dic. 2022", fecha: "2022-12" },
+        tags: [],
+      },
+    ],
+  },
+  {
+    id: "soft-in-health",
+    empresa: "Soft In health",
+    modalidad: "Jornada parcial · Remoto",
+    ubicacion: "Argentina",
+    puestos: [
+      {
+        titulo: "Frontend Developer · HealthTech",
+        desde: { texto: "dic. 2025", fecha: "2025-12" },
+        hasta: { texto: "feb. 2026", fecha: "2026-02" },
+        tags: ["HL7", "DICOM", "NextRis"],
+      },
+    ],
+  },
+  {
+    id: "suinfi",
+    empresa: "SUINFI",
+    modalidad: "Jornada parcial · Remoto",
+    ubicacion: "San Juan, Argentina",
+    puestos: [
+      {
+        titulo: "Jefe de equipo",
+        desde: { texto: "feb. 2024", fecha: "2024-02" },
+        hasta: { texto: "abr. 2024", fecha: "2024-04" },
+        tags: ["Scrum", "Gestión de liderazgo"],
+      },
+    ],
+  },
+];

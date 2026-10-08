@@ -8,6 +8,7 @@ import { Contact } from './components/Contact'
 import './index.css'
 import { Tecnology } from './components/Tecnology'
 import { Footer } from './components/Footer'
+import { Experience } from './components/Experience'
 import LlmAvatarAssistant from './components/LlmAvatarAssistant'
 
 
@@ -31,7 +32,7 @@ function App() {
       <header className='p-6 bg-(--bg-primary)'>
         <Navbar />
       </header>
-      <main id='contenido' tabIndex={-1} className='px-6 pb-6 grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-4 md:auto-rows-[minmax(150px,1fr)] bg-(--bg-primary) focus:outline-none'>
+      <main id='contenido' tabIndex={-1} className='px-6 pb-6 grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-[repeat(4,minmax(0,1fr))_auto] md:auto-rows-[minmax(150px,1fr)] bg-(--bg-primary) focus:outline-none'>
         <CardContainer id='hero' labelledBy='hero-title' col='1 / 6' row='1 / 3' bg='var(--card-1)' className='p-8 flex items-end'>
           <Hero />
         </CardContainer>
@@ -49,6 +50,9 @@ function App() {
         </CardContainer>
         <CardContainer id='tecnology' labelledBy='tecnology-title' col='9 / 13' row='4 / 5' bg='var(--card-2)' className='p-6 flex items-center justify-around text-xs tracking-widest'>
           <Tecnology />
+        </CardContainer>
+        <CardContainer id='experience' labelledBy='experience-title' col='1 / 13' row='5 / 6' bg='var(--card-1)' className='p-8'>
+          <Experience />
         </CardContainer>
       </main>
       <footer id='footer' className='p-6 bg-(--bg-primary)'>

@@ -7,6 +7,7 @@ export const Navbar = () => {
             <ul className="flex gap-4">
                 <li><a href="#projects">Proyectos</a></li>
                 <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#experience">Experiencia</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
