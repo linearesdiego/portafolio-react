@@ -1,17 +1,35 @@
 @import "tailwindcss";
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes wave {
-  0%, 60%, 100% { transform: rotate(0deg); }
-  10% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
 }
 
 /* --- Fuentes locales (carpeta src/assets/font) --- */
@@ -54,18 +72,18 @@
 /* --- Registro en el tema de Tailwind v4 --- */
 @theme {
   --font-gilroy: "Gilroy", ui-sans-serif, system-ui, sans-serif;
-
   /* Opcional: que Gilroy sea la fuente por defecto (clase font-sans / body) */
   --font-sans: "Gilroy", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --color-primary: #2f8fc4;
+  /* Celeste oscurecido para cumplir contraste WCAG AA con texto blanco (≈4.7:1) */
+  --color-primary: #1f6ea6;
   --bg-primary: #0b1420;
 
   /* Paleta celeste oscura (dark mode) para el bento grid */
-  --card-1: #152538;        /* navy oscuro: Hero, Musea, Bio */
-  --card-2: #1c3650;        /* navy medio: card del retrato */
+  --card-1: #152538; /* navy oscuro: Hero, Musea, Bio */
+  --card-2: #1c3650; /* navy medio: card del retrato */
   --card-accent: var(--color-primary); /* celeste vivo: Contact, Redes */
   --ink: #eef3f8;
   --muted: rgba(238, 243, 248, 0.55);
@@ -77,18 +95,16 @@ body {
 }
 
 /* Colocación de cada card en el grid vía custom properties.
-   Se usan props/style inline en <CardContainer>, y este media query
-   las resetea en mobile (los style inline no soportan media queries). */
+   Mobile-first: la base es una sola columna (colocación automática) y
+   recién desde md (768px) se aplican las posiciones del bento grid. */
 .bento-card {
   position: relative;
-  grid-column: var(--col, auto);
-  grid-row: var(--row, auto);
   background: var(--card-bg, var(--card-1));
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .bento-card {
-    grid-column: auto;
-    grid-row: auto;
+    grid-column: var(--col, auto);
+    grid-row: var(--row, auto);
   }
 }

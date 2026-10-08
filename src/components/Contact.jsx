@@ -24,14 +24,11 @@ export const Contact = () => {
 
     return (
         <>
-            <div className="flex items-start justify-between">
-                <p className="text-xs">¿Tenés alguna pregunta?</p>
-                <span aria-hidden="true">↗</span>
-            </div>
+            <p className="text-sm font-medium">¿Tenés alguna pregunta?</p>
 
-            <p className="text-3xl font-medium md:text-4xl">Contactame</p>
+            <h2 id="contact-title" className="text-3xl font-bold md:text-4xl">Contacto</h2>
 
-            <p className="text-sm leading-relaxed">
+            <p className="text-sm font-medium leading-relaxed">
                 No dude en comunicarse conmigo si está buscando un desarrollador, tiene alguna consulta o simplemente desea conectarse.
             </p>
 
@@ -42,7 +39,7 @@ export const Contact = () => {
                     onClick={handleCopy}
                     aria-label="Copiar email"
                     title={copied ? 'Copiado' : 'Copiar email'}
-                    className="cursor-pointer text-current opacity-70 transition-opacity hover:opacity-100"
+                    className="cursor-pointer rounded text-current transition-transform hover:scale-110"
                 >
                     {copied ? (
                         <Check className="h-4 w-4" strokeWidth={2} />
@@ -57,10 +54,11 @@ export const Contact = () => {
                     <a
                         key={name}
                         href={href}
-                        aria-label={name}
                         target="_blank"
-                        title={name}
-                        className="opacity-80 transition-opacity hover:opacity-100"
+                        rel="noopener noreferrer"
+                        aria-label={`${name} (se abre en una pestaña nueva)`}
+                        title={`${name} (se abre en una pestaña nueva)`}
+                        className="transition-transform hover:scale-110"
                     >
                         <Icon className="h-5 w-5" />
                     </a>

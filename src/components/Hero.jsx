@@ -7,8 +7,8 @@ export const Hero = () => {
     return (
         <div className="w-full">
             <div className="absolute top-4 left-4 flex gap-3">
-                <img src={javascript} alt="logo javascrip" className="h-12 w-12 opacity-40" />
-                <img src={react} alt="logo react" className="h-12 w-12 opacity-80" />
+                <img src={javascript} alt="logo javascript" width={48} height={48} className="h-12 w-12 opacity-40" />
+                <img src={react} alt="logo react" width={48} height={48} className="h-12 w-12 opacity-80" />
             </div>
 
             <a
@@ -22,18 +22,18 @@ export const Hero = () => {
 
             <p className="flex items-center gap-3 text-2xl font-semibold">
                 Hola, soy Diego
-                <span className="inline-block animate-[wave_2s_ease-in-out_infinite] origin-[70%_70%] text-4xl">
+                <span className="inline-block animate-[wave_2s_ease-in-out_infinite] motion-reduce:animate-none origin-[70%_70%] text-4xl">
                     👋
                 </span>
             </p>
 
-            <h1 className="mt-1 text-4xl font-extrabold leading-tight">
+            <h1 id="hero-title" className="mt-1 text-4xl font-extrabold leading-tight">
                 <span className="font-light italic">Ssr</span> FrontEnd Developer
             </h1>
 
             <div className="mt-3 flex items-center gap-2 text-sm font-medium text-(--ink)">
                 <span className="relative flex h-2.5 w-2.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
+                    <span className="absolute inline-flex h-full w-full animate-ping motion-reduce:animate-none rounded-full bg-green-500 opacity-75" />
                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
                 </span>
                 Disponible para nuevos proyectos
