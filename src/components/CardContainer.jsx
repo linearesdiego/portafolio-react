@@ -1,6 +1,4 @@
-// Caja / layout de una card del bento grid.
-// Si la card tiene un encabezado propio (labelledBy), se renderiza como <section>
-// con nombre accesible; si no, como <div> genérico.
+
 export const CardContainer = ({ id, col, row, bg, radius = 20, labelledBy, className = '', children }) => {
     const Tag = labelledBy ? 'section' : 'div'
 

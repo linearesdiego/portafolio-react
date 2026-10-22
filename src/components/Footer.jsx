@@ -1,9 +1,7 @@
-import { GithubIcon, LinkedinIcon } from './icons/SocialIcons'
+import { SOCIALS } from "../data/data"
 
-const SOCIALS = [
-    { name: 'GitHub', href: 'https://github.com/linearesdiego', Icon: GithubIcon },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/diego-lineares-40576b215/', Icon: LinkedinIcon },
-]
+
+
 
 export const Footer = () => {
     const year = new Date().getFullYear()

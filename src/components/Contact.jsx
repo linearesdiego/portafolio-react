@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import { Copy, Check } from 'lucide-react'
-import { GithubIcon, LinkedinIcon } from './icons/SocialIcons'
+import { SOCIALS } from '../data/data'
 
 const EMAIL = 'diegolineares@gmail.com'
 
-const SOCIALS = [
-    { name: 'GitHub', href: 'https://github.com/linearesdiego', Icon: GithubIcon },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/diego-lineares-40576b215/', Icon: LinkedinIcon },
-]
+
 
 export const Contact = () => {
     const [copied, setCopied] = useState(false)

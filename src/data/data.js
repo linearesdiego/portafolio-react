@@ -11,6 +11,7 @@ import tailwind from "../assets/icons/tailwind.svg";
 import git from "../assets/icons/git.svg";
 import astro from "../assets/icons/astro.svg";
 import postman from "../assets/icons/postman.svg";
+import { GithubIcon, LinkedinIcon } from "../components/icons/SocialIcons";
 
 export const PROJECTS = [
   {
@@ -113,5 +114,18 @@ export const EXPERIENCIA = [
         tags: ["Scrum", "Gestión de liderazgo"],
       },
     ],
+  },
+];
+
+export const SOCIALS = [
+  {
+    name: "GitHub",
+    href: "https://github.com/linearesdiego",
+    Icon: GithubIcon,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/diego-lineares-40576b215/",
+    Icon: LinkedinIcon,
   },
 ];

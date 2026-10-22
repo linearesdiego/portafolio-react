@@ -20,7 +20,7 @@ export const Hero = () => {
                 Descargar CV
             </a>
 
-            <p className="flex items-center gap-3 text-2xl font-semibold">
+            <p className="flex items-center gap-3 text-2xl font-semibold mt-10 md:mt-0">
                 Hola, soy Diego
                 <span className="inline-block animate-[wave_2s_ease-in-out_infinite] motion-reduce:animate-none origin-[70%_70%] text-4xl">
                     👋
