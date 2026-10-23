@@ -69,7 +69,6 @@
   font-display: swap;
 }
 
-/* --- Registro en el tema de Tailwind v4 --- */
 @theme {
   --font-gilroy: "Gilroy", ui-sans-serif, system-ui, sans-serif;
   /* Opcional: que Gilroy sea la fuente por defecto (clase font-sans / body) */
@@ -94,9 +93,6 @@ body {
   color: var(--ink);
 }
 
-/* Colocación de cada card en el grid vía custom properties.
-   Mobile-first: la base es una sola columna (colocación automática) y
-   recién desde md (768px) se aplican las posiciones del bento grid. */
 .bento-card {
   position: relative;
   background: var(--card-bg, var(--card-1));

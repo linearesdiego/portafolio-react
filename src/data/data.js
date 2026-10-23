@@ -11,6 +11,7 @@ import tailwind from "../assets/icons/tailwind.svg";
 import git from "../assets/icons/git.svg";
 import astro from "../assets/icons/astro.svg";
 import postman from "../assets/icons/postman.svg";
+//icons
 import { GithubIcon, LinkedinIcon } from "../components/icons/SocialIcons";
 
 export const PROJECTS = [
